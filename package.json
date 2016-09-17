@@ -1,0 +1,16 @@
+{
+  "name": "alfred-wpdotcom-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ryan Boren",
+  "license": "ISC",
+  "dependencies": {
+    "alfred-workflow-nodejs": "^2.0.0",
+    "wpcom": "^5.2.0"
+  }
+}
