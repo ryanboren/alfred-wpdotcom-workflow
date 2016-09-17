@@ -24,7 +24,27 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Open to posts page</string>
+				<string>Open posts screen</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5C567109-856F-4692-95E3-9FBFBEE3423C</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open pages screen</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0ADCE68-F153-46D1-AFD6-7A7AAF5ECEE9</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open customizer</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -152,25 +172,40 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/local/bin/node wpdotcom.js "setkey" "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
+				<key>browser</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://wordpress.com/pages/{query}</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>3CC2B33A-0F03-4269-A80A-6DAC72617E09</string>
+			<string>5C567109-856F-4692-95E3-9FBFBEE3423C</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://wordpress.com/customize/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E0ADCE68-F153-46D1-AFD6-7A7AAF5ECEE9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -214,6 +249,29 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/local/bin/node wpdotcom.js "setkey" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3CC2B33A-0F03-4269-A80A-6DAC72617E09</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -231,16 +289,23 @@
 		<key>3CC2B33A-0F03-4269-A80A-6DAC72617E09</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>610</integer>
+		</dict>
+		<key>5C567109-856F-4692-95E3-9FBFBEE3423C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>530</integer>
+			<key>ypos</key>
+			<integer>330</integer>
 		</dict>
 		<key>67289DDF-8416-4C7D-9002-919AB224EF6F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>640</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>610</integer>
 		</dict>
 		<key>710032B6-A414-4CA1-BE5B-B6EE2E2AFB48</key>
 		<dict>
@@ -252,9 +317,9 @@
 		<key>762048CE-085B-49D7-9E19-3E1EE895988C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>610</integer>
 		</dict>
 		<key>77048B31-DD44-4CEB-AD0A-633F622893D7</key>
 		<dict>
@@ -262,6 +327,13 @@
 			<integer>530</integer>
 			<key>ypos</key>
 			<integer>60</integer>
+		</dict>
+		<key>E0ADCE68-F153-46D1-AFD6-7A7AAF5ECEE9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>530</integer>
+			<key>ypos</key>
+			<integer>470</integer>
 		</dict>
 	</dict>
 	<key>version</key>
