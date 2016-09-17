@@ -7,28 +7,29 @@ var settings = AlfredNode.settings;
 workflow.setName("alfred-wpdotcom-workflow");
 var Item = AlfredNode.Item;
 
-token = settings.get( "token" )
-if ( ! token ) {
-	var item1 = new Item({
-    	title: 'Set your auth token with wpcomsetkey',
-    	arg: '',
-    	subtitle: '',
-    	valid: false
-	});
-	workflow.addItem(item1);
-	workflow.feedback();
-	return;
-}
+settings.getPassword("alfred", function(error, token){
+	main(token);
+});
 
-var wpcom = require( 'wpcom' )( token );
-
-(function main() {
+function main(token) {
+	if ( ! token ) {
+        var item = new Item({
+            title: 'Set your token with wpcomsetkey',
+            arg: '',
+            subtitle: '',
+            valid: false
+        });
+        workflow.addItem(item);
+        workflow.feedback();
+        return;
+	}
+	var wpcom = require( 'wpcom' )( token );
 
 	// Search user's sites
 	actionHandler.onAction("sites", function(query) {
 		var me = wpcom.me();
 
-		me.sites({ fields: 'ID,name,URL' }, function(err, list) {
+		me.sites({ fields: 'name,URL' }, function(err, list) {
 			if (err) throw err;
 
 			// Iterate over sites
@@ -58,10 +59,9 @@ var wpcom = require( 'wpcom' )( token );
     });
 
 	actionHandler.onAction("setkey", function(password) {
-		settings.set("token", password);
-		console.log(password);
+		settings.setPassword("alfred", password);
 	});
 
     AlfredNode.run();
-})();
+}
 
